@@ -1,0 +1,259 @@
+# GPU Evaluation Tutorial
+
+## Title
+**How to Evaluate GPUs Properly: A Practical Framework for AI, HPC, and Workstation Buyers**
+
+## Goal
+Teach learners how to evaluate GPUs holistically by understanding compute, memory, interconnect, efficiency, workload fit, and hidden tradeoffs. The final outcome should help them compare GPUs intelligently, especially **A100 vs H100**, without falling for misleading claims based only on core counts, VRAM size, or brand hype.
+
+## Tone
+Educational, practical, skeptical, and beginner-friendly, but with enough depth for serious AI engineers and technical buyers.
+
+***
+
+## Chapter 1 – Why GPU Evaluation Is Hard
+
+Start by explaining that GPU comparison is often misleading because people focus on the wrong numbers. Many buyers look at core count, clock speed, or memory size and assume those alone determine performance. In reality, a GPU’s usefulness depends on how compute, memory, interconnect, and software support work together.
+
+Explain that the same GPU can be excellent for one job and mediocre for another. This chapter should create the core lesson: **evaluate fit, not just specs**.
+
+***
+
+## Chapter 2 – The Four Layers of GPU Performance
+
+Introduce your four-layer framework:
+
+- **Compute**: cores, clocks, FP32, FP16, FP64, tensor throughput.
+- **Memory**: VRAM capacity, memory type, bus width, bandwidth.
+- **System scaling**: PCIe, NVLink, NVSwitch, multi-GPU behavior.
+- **Operational fit**: power, thermals, price, driver support, availability.
+
+Explain that a GPU must perform well across all relevant layers for the target task. A strong score in one layer does not guarantee overall success.
+
+***
+
+## Chapter 3 – Why Task Category Matters
+
+Teach that a GPU should never be judged in isolation from the workload.
+
+Cover broad workload categories:
+- Gaming.
+- AI training.
+- AI inference.
+- HPC and simulation.
+- Video editing and VFX.
+- 3D rendering.
+- General workstation use.
+
+Explain that each task weights the GPU differently. For example, AI training cares much more about tensor throughput, memory bandwidth, and VRAM than about RT cores or boost clock.
+
+***
+
+## Chapter 4 – Compute: The First Trap
+
+Explain compute metrics in detail, but also show why they are incomplete by themselves.
+
+Cover:
+- CUDA core count or shader count.
+- Base clock.
+- Boost clock.
+- FP32 throughput.
+- FP16/BF16 throughput.
+- FP64 throughput.
+- Tensor core count and tensor throughput.
+- Architecture generation.
+
+Then make the important warning: more cores does not automatically mean better performance. A GPU with more cores can still be slower in practice if it has weaker memory bandwidth, less suitable precision support, or poor scaling behavior.
+
+***
+
+## Chapter 5 – Memory: The Real Bottleneck
+
+Explain why memory is often the limiting factor in real workloads.
+
+Cover:
+- VRAM capacity.
+- Memory type.
+- Memory bus width.
+- Memory bandwidth.
+- Latency vs throughput tradeoffs.
+
+Teach that large models, high-resolution assets, and data-heavy workloads often fail because data cannot move fast enough or cannot fit into VRAM. This chapter should emphasize that memory capacity alone is not enough — bandwidth matters too.
+
+Also make clear that a GPU with more memory is not automatically better if the memory is slow or not well suited for the workload.
+
+***
+
+## Chapter 6 – Interconnect and Scaling
+
+Explain that once one GPU is not enough, scaling becomes a major part of evaluation.
+
+Cover:
+- PCIe generation.
+- NVLink.
+- NVSwitch.
+- Multi-GPU communication patterns.
+- Host-device vs GPU-GPU traffic.
+
+Teach that PCIe is useful and flexible, but it is not a substitute for a strong accelerator fabric. For large training or HPC jobs, interconnect speed can determine whether adding more GPUs actually helps.
+
+This is where learners should understand that multi-GPU scaling is not automatic. Sometimes more GPUs give poor returns if communication overhead dominates.
+
+***
+
+## Chapter 7 – Efficiency and Deployment Fit
+
+Explain that performance is not just about raw speed. Real deployment also depends on:
+- TDP.
+- Actual power draw.
+- Cooling requirements.
+- Performance per watt.
+- Driver maturity.
+- Availability.
+- Price.
+
+Make it clear that some GPUs look great on paper but are impractical in real systems because of cost, power, or thermal limits. A GPU that is slightly slower but far more efficient can be the better choice in production.
+
+***
+
+## Chapter 8 – How Marketing Can Mislead You
+
+Create a chapter explicitly about avoiding shallow comparisons.
+
+Explain common mistakes:
+- Assuming the GPU with more cores is always faster.
+- Assuming more VRAM always means better AI performance.
+- Assuming a newer-looking name automatically means better workload fit.
+- Assuming gaming-oriented specs translate directly to AI or HPC.
+- Assuming benchmark claims from a vendor reflect your actual use case.
+
+Use examples of misjudgment:
+- A consumer GPU may have high FP32 and strong boost clocks, but still be a poor fit for large model training.
+- A data center GPU may look “slower” in graphics-style metrics but dominate real AI workloads because of memory bandwidth, tensor throughput, and scaling support.
+
+The teaching point here is that marketing tends to optimize attention, not evaluation quality.
+
+***
+
+## Chapter 9 – How to Build a Weighted Score
+
+Turn the framework into a method.
+
+Explain that a GPU should be scored with weights based on the task. A simple 1–5 rating can be used for each relevant parameter, then multiplied by task importance.
+
+Suggested scoring logic:
+- Gaming: FP32, clock speed, RT performance, price.
+- AI training: VRAM, bandwidth, tensor throughput, scaling.
+- AI inference: tensor throughput, bandwidth, efficiency.
+- HPC: FP64, bandwidth, NVLink, efficiency.
+- Rendering: CUDA throughput, RT performance, VRAM, bandwidth.
+
+Stress that not every parameter should be weighted equally. That is how people avoid false conclusions.
+
+***
+
+## Chapter 10 – Common Wrong Comparisons
+
+Use this chapter to show surprising bad decisions that happen when the framework is ignored.
+
+Examples:
+- Comparing only core count and ignoring memory bandwidth.
+- Comparing only VRAM size and ignoring precision support.
+- Comparing only boost clock and ignoring sustained power limits.
+- Comparing only single-GPU speed and ignoring multi-GPU scaling.
+- Comparing only gaming benchmarks and assuming AI performance will follow the same ranking.
+
+Explain why each of these mistakes leads to flawed purchasing or deployment decisions.
+
+***
+
+## Chapter 11 – A100 as an Evaluation Case
+
+Introduce A100 as a real example of the framework.
+
+Walk through:
+- Compute profile.
+- Memory system.
+- Interconnect support.
+- Operational fit.
+- Workloads it is designed for.
+
+Explain why A100 is often strong for AI training and HPC even if it does not “win” the consumer-style spec race. This is a good place to show that the evaluation framework reveals value beyond surface metrics.
+
+***
+
+## Chapter 12 – H100 as an Evaluation Case
+
+Repeat the same process for H100.
+
+Compare:
+- Newer architecture.
+- Stronger tensor acceleration.
+- Better data center positioning.
+- Improved scaling and system integration.
+- Better fit for modern large-model AI.
+
+Explain that H100 is not just “an A100 with more specs.” It should be understood as a newer system optimized for current-generation AI workloads. The framework helps reveal why that matters.
+
+***
+
+## Chapter 13 – A100 vs H100: Applying the Framework
+
+Now use the framework directly to compare them.
+
+Structure the comparison by categories:
+- Compute.
+- Memory.
+- Interconnect.
+- Efficiency.
+- Software/platform fit.
+- Cost and deployment.
+
+Teach that one GPU may win in one category while the other wins overall depending on the workload. This is where learners should see the value of holistic scoring.
+
+Important lesson:
+**The better GPU is the one that best fits the job, not the one with the loudest headline number.**
+
+***
+
+## Chapter 14 – Practical Decision Workflow
+
+Give learners a step-by-step method:
+1. Define the workload.
+2. Identify the bottleneck.
+3. Select the relevant GPU categories.
+4. Weight the categories.
+5. Compare candidate GPUs.
+6. Check power, cooling, price, and availability.
+7. Validate software compatibility.
+8. Sanity-check against real benchmark behavior.
+
+This turns the framework into something actionable rather than theoretical.
+
+***
+
+## Chapter 15 – Minimum Mental Model Before Buying or Comparing
+
+End the lesson by summarizing the minimum mental model:
+- Compute matters.
+- Memory matters.
+- Interconnect matters.
+- Efficiency matters.
+- Workload fit matters.
+- Marketing claims are not enough.
+
+The closing lesson should be that good GPU evaluation is not about finding the highest number. It is about matching the entire system to the actual job.
+
+***
+
+# How to Use It for A100 vs H100
+
+When comparing **A100 vs H100**, the framework should be applied like this:
+
+- First define whether the workload is training, inference, HPC, or mixed use.
+- Then compare the relevant compute precision modes, not just raw core counts.
+- Next compare memory capacity and bandwidth, because these often dominate large-model behavior.
+- Then compare interconnect and multi-GPU scaling, especially if the workload spans multiple GPUs.
+- Finally compare efficiency, deployment cost, software maturity, and availability.
+
+This makes the comparison much more honest than a spec-sheet race. In many real cases, H100 will be the better fit for newer AI workloads, but A100 may still be the smarter choice depending on budget, compatibility, and the actual model or cluster setup.

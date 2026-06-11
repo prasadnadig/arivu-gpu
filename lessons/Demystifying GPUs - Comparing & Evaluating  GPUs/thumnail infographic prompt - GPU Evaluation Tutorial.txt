@@ -1,0 +1,27 @@
+
+Create a infographic depicting this video using this guidance: 
+A dark, high-contrast split-screen design with a bold “GPU EVALUATION” title in the center. On one side, show a stylized **A100** or **H100** data center GPU with a server-rack background; on the other side, show a consumer flagship GPU like the **RTX GeForce 5090** or a generic desktop GPU card with a gaming PC/desktop background. Between them, place a bright comparison arrow or a “VS” badge. Add small visual icons for **cores**, **memory**, **bandwidth**, and **NVLink** to suggest that the video is about looking beyond marketing claims.
+
+**Main message text on thumbnail:**  
+- “GPU EVALUATION”
+- “BE IN THE KNOW”
+- “A100 vs H100”
+
+**Visual style:**  
+- Dark background with neon blue, cyan, and orange highlights.
+- Large, bold sans-serif text.
+- Simple spec icons instead of cluttered paragraphs.
+- One GPU shown as “consumer,” the other as “data center.”
+- A subtle warning symbol or magnifying glass to imply careful analysis.
+
+**Optional alternate thumbnail text ideas:**  
+- “CORE COUNT LIES”
+- “WHICH GPU IS BETTER?”
+- “A100 vs H100 Explained”
+- “LOOK BEYOND SPECS”
+
+**Composition idea:**  
+Left: desktop GPU + “marketing claims” label.  
+Right: data center GPU + “real performance” label.  
+Center: magnifying glass, checklist, or scorecard graphic.
+
