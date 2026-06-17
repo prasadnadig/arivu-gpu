@@ -1,7 +1,0 @@
-Dive into the fundamentals of GPUs for AI engineers with this clear, chapter-by-chapter visual lesson. Starting from why GPUs exist and how they differ from CPUs, we explore NVIDIA’s GPU ecosystem, key architecture ideas, and how to read GPU names, generations, and product families using RTX 5090 and H200 as practical examples.
-
-You’ll learn how to identify a GPU’s architecture and generation, the difference between a GPU chip and a full card, and which specs actually matter when comparing GPUs for AI and high-performance workloads. We cover precision modes, compute capability, and how SIMT, warps, and thread blocks enable massive parallelism for matrix multiplication, training, and inference.
-
-We then explore GPU-to-GPU communication, memory bandwidth, and workload fit, showing why those factors matter so much in real-world AI systems. Using RTX 5090 as a consumer-focused example and H200 as a high-end data center example, you’ll see how memory capacity, bandwidth, and system design influence performance, scalability, and practical use cases.
-
-Finally, we tie everything together with a practical decision framework and a minimum mental model for choosing GPUs: from understanding precision trade-offs and utilization to evaluating memory, bandwidth, and interconnects before you even open a whitepaper. Whether you’re new to GPUs or looking to solidify the basics, this video gives you a grounded, visual guide to RTX 5090 and H200 in the context of modern AI workloads.

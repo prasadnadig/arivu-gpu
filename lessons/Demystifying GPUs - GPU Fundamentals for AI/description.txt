@@ -1,7 +1,0 @@
-Dive into the fundamentals of GPUs for AI engineers with this clear, chapter-by-chapter visual lesson. Starting from why GPUs exist and how they differ from CPUs, we walk through NVIDIA’s rise, key architectures from Pascal to Hopper, and how to read GPU names, generations, and product families using real examples from RTX GeForce, A100, and H100 GPUs.
-
-You’ll learn how to identify a GPU’s architecture and generation, the difference between a GPU chip and a full card, and which specs actually matter when comparing GPUs for AI and high-performance workloads. We cover precision modes, compute capability, and how SIMT, warps, and thread blocks enable massive parallelism for matrix multiplication, training, and inference.
-
-We then explore NVLink and NVSwitch, why they outperform PCIe for multi-GPU communication, and how that impacts large-scale training. Using RTX GeForce 5090 as a consumer example and A100/H100 as data center examples, you’ll see how memory capacity, bandwidth, and interconnects drive real-world workload fit, and why data center GPUs are preferred for large models and multi-GPU systems.
-
-Finally, we tie everything together with a practical decision framework and a minimum mental model for choosing GPUs: from understanding precision trade-offs and utilization to evaluating memory, bandwidth, and interconnects before you even open a whitepaper. Whether you’re new to GPUs or looking to solidify the basics, this video gives you a grounded, visual guide to RTX GeForce 5090, A100, and H100 in the context of modern AI workloads.
